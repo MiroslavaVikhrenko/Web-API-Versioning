@@ -2,9 +2,9 @@
 using Microsoft.AspNetCore.Mvc;
 using Web_API_Versioning.Models.DTOs;
 
-namespace Web_API_Versioning.Controllers
+namespace Web_API_Versioning.V1.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/v1/[controller]")]
     [ApiController]
     public class CountriesController : ControllerBase
     {
@@ -14,11 +14,11 @@ namespace Web_API_Versioning.Controllers
             var countriesDomainModel = CountriesData.Get();
 
             //Map Domain Model to DTO
-            var response = new List<CountryDto>();
+            var response = new List<CountryDtoV1>();
 
             foreach (var countryDomain in countriesDomainModel)
             {
-                response.Add(new CountryDto
+                response.Add(new CountryDtoV1
                 {
                     Id = countryDomain.Id,
                     Name = countryDomain.Name,
