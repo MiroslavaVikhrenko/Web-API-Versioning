@@ -21,5 +21,6 @@ namespace Web_API_Versioning
             };
 
             return countries.Select(c => new Country { Id = c.Id, Name = c.Name }).ToList();
+        }
     }
 }
